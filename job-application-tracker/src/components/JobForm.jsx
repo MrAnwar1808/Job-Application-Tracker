@@ -1,4 +1,5 @@
-import React, { useState } from "react";import { TextField, Button, Select, MenuItem, Card, CardContent, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { TextField, Button, Select, MenuItem, Card, CardContent, Typography } from "@mui/material";
 const JobForm = ({ addJob }) => {
   const [job, setJob] = useState({ client: "", role: "", status: "Applied" });
 
@@ -18,7 +19,7 @@ const JobForm = ({ addJob }) => {
 
   return (
     <Card sx={{ mt: 3, p: 2 }}><CardContent>
-        <Typography variant="h6">Add Job Application</Typography>
+        <Typography variant="h6">Add Client-Job Application</Typography>
         <form onSubmit={handleSubmit}>
             <TextField label="client" name="client" fullWidth sx={{ mb: 2 }} value={job.client} onChange={handleChange} />
             <TextField label="Role" name="role" fullWidth sx={{ mb: 2 }} value={job.role} onChange={handleChange} />

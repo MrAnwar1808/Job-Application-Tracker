@@ -1,4 +1,5 @@
-import React from "react";import { Select, MenuItem } from "@mui/material";
+import React from "react";
+import { Select, MenuItem } from "@mui/material";
 const JobSort = ({ jobs, setJobs }) => {
   const handleSort = (e) => {
     const status = e.target.value;
