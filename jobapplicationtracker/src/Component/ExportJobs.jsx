@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 
 const ExportJobs = ({ jobs }) => {
   const handleExport = () => {
-    console.log("Exporting jobs...", jobs);
+    console.log("Exporting jobs:", jobs);
     alert("Exporting jobs...");
   };
 

@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Typography } from "@mui/material";
 import JobForm from "../Component/JobForm";
 import JobSort from "../Component/JobSort";
@@ -8,8 +8,19 @@ import JobPagination from "../Component/JobPagination";
 import ExportJobs from "../Component/ExportJobs";
 
 
-const RenderingJobComponent = () => {
+const RenderingJobComponents = () => {
   const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    const savedJobs = JSON.parse(localStorage.getItem("jobs")) || [];
+    console.log("Loaded jobs from local storage:", savedJobs);
+    setJobs(savedJobs);
+  }, []);
+
+  useEffect(() => {
+    console.log("Saving jobs to local storage:", jobs);
+    localStorage.setItem("jobs", JSON.stringify(jobs));
+  }, [jobs]);
 
   const addJob = (job) => {
     setJobs([...jobs, job]);
@@ -29,4 +40,5 @@ const RenderingJobComponent = () => {
   );
 };
 
-export default RenderingJobComponent
+export default RenderingJobComponents 
+
