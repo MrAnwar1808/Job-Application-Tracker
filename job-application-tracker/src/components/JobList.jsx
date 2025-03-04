@@ -5,14 +5,14 @@ const JobList = ({ jobs }) => {
         <Table>
             <TableHead>
                 <TableRow>
-                    <TableCell>Company</TableCell>
+                    <TableCell>client</TableCell>
                     <TableCell>Role</TableCell>
                     <TableCell>Status</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>    
                           {jobs.map((job, index) => (  <TableRow key={index}>
-                            <TableCell>{job.company}</TableCell>
+                            <TableCell>{job.client}</TableCell>
                             <TableCell>{job.role}</TableCell>
                             <TableCell>{job.status}</TableCell>
                             </TableRow>  ))}        
